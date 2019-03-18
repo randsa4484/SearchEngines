@@ -1,0 +1,44 @@
+﻿<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<input type="text" id="searchterm" />
+<input type="button" value="Search" id="searchBtn" />
+
+<div id="results" style="display: none">
+ 
+</div>
+
+
+<div id="loading-div-background" style="display: none">
+    <div id="loading-div" class="ui-corner-all">
+        <div id="loadingbar"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>
+        <h2 style="color: gray; font-weight: normal;">Please wait....</h2>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#searchBtn').click(function () {
+
+            $('#loading-div-background').show();
+
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GetData", "Home")',
+                data: { 'SearchTerm': $("#searchterm").val() },
+                async: true,
+                success: function (result) {
+                    $('#loading-div-background').hide();
+                    $('#results').html(result);
+                    $('#results').show();
+                }
+            });
+
+        });
+
+    });
+</script>

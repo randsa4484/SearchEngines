@@ -1,0 +1,21 @@
+﻿{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:54754/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "Bds.TechTest": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "TechTest/help",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:54754"
+    }
+  }
+}

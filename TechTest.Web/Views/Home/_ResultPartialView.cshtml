@@ -1,0 +1,9 @@
+﻿@model SearchResult
+
+<div>
+    <h2><a href='@Model.Link'>@Model.Title</a></h2>
+    <h4>Source: @Model.SearchEngine</h4>
+    <h4><a href='@Model.Link'>@Model.Link</a></h4>
+    <h6><span>@Html.Raw(@Model.Snippet)</span></h6>
+</div>
+

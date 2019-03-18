@@ -1,0 +1,18 @@
+﻿@model  SearchResults
+
+<div>
+    <h4>Search Results for term '@Model.SearchTerm'</h4>
+    <hr />
+    @if (Model.Results.Count == 0)
+    {
+        <h3 class="alert-warning">No items matched your search query!</h3>
+    }
+    else
+    {
+        foreach (var result in Model.Results)
+        {
+            <partial name="_ResultPartialView" model="result" />
+        }
+    }
+</div>
+
